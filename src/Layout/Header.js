@@ -1,28 +1,50 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import classes from './Header.module.css';
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul>
+    <header className={classes.header}>
+      <nav className={classes['nav-lists']}>
+        <h1 className={classes['heading-primary']}>
+          <span className={classes.color}>X-</span>fitt
+        </h1>
+        <ul className={classes['nav-items']}>
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink className={classes['nav-link']} to="/home">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/aboutMe">About Me</NavLink>
+            <NavLink className={classes['nav-link']} to="/aboutMe">
+              About Me
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs">Blogs</NavLink>
+            <NavLink className={classes['nav-link']} to="/blogs">
+              Blogs
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink className={classes['nav-link']} to="/contact">
+              Contact
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/login">Contact</NavLink>
+            <NavLink
+              className={`${classes.btn} ${classes['btn-login']}  ${classes['nav-link']}`}
+              to="/login"
+            >
+              Login
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/registration">Registration</NavLink>
+            <NavLink
+              className={`${classes.btn} ${classes['btn-registration']}  ${classes['nav-link']}`}
+              to="/registration"
+            >
+              Registration
+            </NavLink>
           </li>
         </ul>
       </nav>
