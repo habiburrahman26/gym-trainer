@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .heading-primary {
@@ -57,4 +58,40 @@
 .btn-registration:hover {
   color: currentColor;
   border-bottom: 1px solid #f6ae62;
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 2rem 2rem;
+  }
+
+  .nav-lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .heading-primary {
+    font-size: 2.6rem;
+  }
+
+  .color {
+    color: #ff922b;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: -10%;
+    right: 0;
+    width: 115%;
+    height: 90vh;
+    background-color: #fff;
+    padding: 0;
+    text-align: center;
+
+    /* transform: translateX(100%); */
+  }
 }
