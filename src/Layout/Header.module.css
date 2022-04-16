@@ -79,7 +79,11 @@
     color: #ff922b;
   }
 
-  .nav-items {
+  .nav-items{
+    display: none;
+  }
+
+  /* .nav-items {
     flex-direction: column;
     justify-content: center;
     position: absolute;
@@ -92,6 +96,5 @@
     padding: 0;
     text-align: center;
 
-    /* transform: translateX(100%); */
-  }
+  } */
 }

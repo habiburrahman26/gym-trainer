@@ -1,4 +1,31 @@
-.hero div{
+.hero {
   width: 100%;
   height: 90vh;
+  position: relative;
+}
+
+.container {
+  background-size: cover;
+  filter: brightness(0.8);
+  width: 100%;
+  height: 90vh;
+  background-image: url('https://i.ibb.co/K79K2wZ/banner2.jpg');
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+}
+
+.heading {
+  font-size: 5.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  padding-left: 7rem;
+}
+
+.color {
+  color: #ff922b;
 }
