@@ -62,16 +62,28 @@
 }
 
 .social-meadia-signin {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* gap: 10px; */
   margin-top: 15px;
 }
+
+.social-meadia-signin div {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(180, 178, 178);
+  margin-bottom: 1rem;
+}
+
 
 .social-meadia-signin button {
   border: none;
   background-color: #fff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .social-meadia-signin img:hover {
@@ -86,6 +98,7 @@
 }
 
 .line-break {
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
   gap: 5px;

@@ -19,6 +19,26 @@ const Registration = () => {
       <div>
         <button className="btn-login">Registration</button>
       </div>
+      <div className="social-meadia-signin">
+        <div>
+          <button type="button">
+            <img
+              src="https://img.icons8.com/color/48/000000/facebook-new.png"
+              alt=""
+            />
+            <p>Sign up with facebook</p>
+          </button>
+        </div>
+        <div>
+          <button type="button">
+            <img
+              src="https://img.icons8.com/color/48/000000/google-logo.png"
+              alt=""
+            />
+            <p>Sign up with google</p>
+          </button>
+        </div>
+      </div>
     </form>
   );
 };
