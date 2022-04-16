@@ -11,7 +11,7 @@ const Header = () => {
         </h1>
         <ul className={classes['nav-items']}>
           <li>
-            <NavLink className={classes['nav-link']} to="/home">
+            <NavLink className={classes['nav-link']} to="/">
               Home
             </NavLink>
           </li>

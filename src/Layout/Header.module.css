@@ -40,15 +40,12 @@
 }
 
 .btn-login {
-  padding: 1rem 2rem;
-  background-color: #ffe8cc;
-  border-radius: 100px;
   font-weight: 400;
 }
 
 .btn-login:hover {
-  background-color: #f6ae62;
-  color: #fff;
+  color: currentColor;
+  border-bottom: 1px solid #f6ae62;
 }
 
 .btn-registration {

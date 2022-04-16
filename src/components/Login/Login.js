@@ -8,12 +8,10 @@ const Login = () => {
       <div className="input-control">
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" />
-        <p className="error-text"></p>
       </div>
       <div className="input-control">
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <p className="error-text"></p>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" />
       </div>
       <div>
         <button className="btn-login">Login</button>

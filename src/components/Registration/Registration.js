@@ -13,11 +13,16 @@ const Registration = () => {
         <input type="email" name="email" id="email" />
       </div>
       <div className="input-control">
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" />
       </div>
       <div>
         <button className="btn-login">Registration</button>
+      </div>
+      <div className="line-break">
+        <div className="line"></div>
+        <div>or</div>
+        <div className="line"></div>
       </div>
       <div className="social-meadia-signin">
         <div>
