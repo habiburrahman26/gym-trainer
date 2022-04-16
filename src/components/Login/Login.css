@@ -1,0 +1,145 @@
+.form-control {
+  width: 400px;
+  border: 2px solid #dee2e6;
+  margin: 70px auto;
+  padding: 16px 28px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.heading {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.form-control label {
+  margin-bottom: 4px;
+  display: inline-block;
+  font-size: 17px;
+}
+
+.form-control input {
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #adb5bd;
+}
+
+.form-control input:focus {
+  outline: none;
+  border: 1px solid #2790d6;
+}
+
+.form-control input::placeholder {
+  font-size: 14px;
+}
+
+.input-control {
+  margin-bottom: 12px;
+}
+
+.btn-login {
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #0170ba;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  transition: all 0.2s;
+}
+
+.btn-login:hover {
+  background-color: #2790d6;
+}
+
+.social-meadia-signin {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-meadia-signin button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.social-meadia-signin img:hover {
+  filter: brightness(1.2);
+}
+
+.social-meadia-signin img {
+  width: 30px;
+  height: 30px;
+
+  filter: ;
+}
+
+.line-break {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #676a6d;
+}
+
+.line {
+  border-top: 1px solid #cbced0;
+  width: 50%;
+}
+
+.forgot-password {
+  border: none;
+  background-color: #fff;
+  text-decoration: underline;
+  font-size: 15px;
+  color: #333;
+  margin-top: 6px;
+  float: right;
+  cursor: pointer;
+}
+
+.sign-page {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.sign-page a {
+  color: #0170ba;
+  font-size: 17px;
+}
+
+.error-text {
+  color: #ff6b6b;
+}
+
+.logout {
+  border: none;
+  padding: 8px 16px;
+  background-color: #a1b1bc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  transition: all 0.2s;
+}
+
+input.invalid {
+  border: 1px solid #ff6b6b;
+  background-color: #fff5f5;
+}
