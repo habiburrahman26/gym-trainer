@@ -10,6 +10,9 @@ const Home = () => {
           <p>Keep your body</p>
           <p className={classes.color}>fit and strong</p>
         </h1>
+        <div>
+          <button className={classes['hero-btn']}>More about health</button>
+        </div>
       </div>
     </section>
   );
