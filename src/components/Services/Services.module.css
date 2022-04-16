@@ -1,0 +1,90 @@
+.servies-section {
+  padding: 8rem 10rem;
+}
+
+.title {
+  font-size: 3.6rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.servies {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+}
+
+.service {
+  padding: 1rem 1.4rem;
+  border: 1px solid #ffd8a8;
+  border-radius: 5px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #ffe8cc;
+  border-radius: 100px;
+  display: inline-block;
+  padding: 0.4rem 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.desc {
+  font-size: 1.6rem;
+}
+
+.bookBtn {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  background-color: #ffc078;
+  border: none;
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bookBtn:hover {
+  background-color: #ffa94d;
+}
+
+@media (max-width: 36em) {
+  .servies-section {
+    padding: 8rem 1rem;
+  }
+
+  .servies {
+    grid-template-columns: 1fr;
+  }
+}
