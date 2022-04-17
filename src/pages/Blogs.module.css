@@ -1,0 +1,22 @@
+.blogs {
+  max-width: 120rem;
+  margin: 5rem auto;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: #343a40;
+  padding: 0 3rem;
+}
+
+.blog {
+  padding: 1rem 1rem;
+  border: 2px solid #f1bd8d;
+  border-radius: 4px;
+}
+
+.blog-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
