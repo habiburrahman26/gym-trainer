@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -6,6 +6,7 @@ import {
 import auth from '../../firebase.init';
 
 import { Link, useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../UI/LoadingSpinner';
 import { async } from '@firebase/util';
 
 const Registration = () => {
@@ -28,18 +29,18 @@ const Registration = () => {
     setEnteredPassword(e.target.value);
   };
 
-  if (user) {
-    navigate('/', { replace: true });
+  useEffect(() => {
+    if (user) {
+      navigate('/', { replace: true });
+      console.log(user);
+    }
+  }, [user, navigate]);
+
+  if (loading) {
+    return <LoadingSpinner />;
   }
 
-  const signInEmail = async () => {
-    await createUserWithEmailAndPassword(enteredEmail, enteredPassword, {
-      sendEmailVerification: true,
-    });
-    await updateProfile({ displayName: enteredName.trim() });
-  };
-
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     if (
@@ -50,7 +51,10 @@ const Registration = () => {
       return;
     }
 
-    signInEmail();
+    await createUserWithEmailAndPassword(enteredEmail, enteredPassword, {
+      sendEmailVerification: true,
+    });
+    await updateProfile({ displayName: enteredName.trim() });
   };
 
   return (
@@ -89,6 +93,7 @@ const Registration = () => {
           onChange={passwordChangeHandler}
         />
       </div>
+      <p className="error-text">{error?.message}</p>
       <div>
         <button className="btn-login">Registration</button>
       </div>
