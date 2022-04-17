@@ -20,3 +20,9 @@
   font-weight: 500;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 36em) {
+  .blogs {
+    padding: 0 1rem;
+  }
+}

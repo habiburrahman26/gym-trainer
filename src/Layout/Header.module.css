@@ -48,22 +48,23 @@
   cursor: pointer;
 }
 
-.btn-login {
-  font-weight: 400;
-}
-
-.btn-login:hover {
-  color: currentColor;
-  border-bottom: 1px solid #f6ae62;
-}
-
 .btn-registration {
   font-weight: 400;
+  border: 2px solid #ffd8a8;
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
 }
 
 .btn-registration:hover {
   color: currentColor;
-  border-bottom: 1px solid #f6ae62;
+  background-color: #ffd8a8;
+}
+
+.active,
+.active:hover,
+.active:active {
+  border-bottom: 2px solid #ff922b;
+  color: #f6ae62;
 }
 
 @media (max-width: 576px) {

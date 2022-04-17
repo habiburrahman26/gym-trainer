@@ -16,25 +16,26 @@ const Header = () => {
         </h1>
         <ul className={classes['nav-items']}>
           <li>
-            <NavLink className={classes['nav-link']} to="/">
+            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/">
               Home
             </NavLink>
           </li>
+
           <li>
-            <NavLink className={classes['nav-link']} to="/aboutMe">
-              About Me
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={classes['nav-link']} to="/blogs">
+            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/blogs">
               Blogs
             </NavLink>
           </li>
           <li>
+            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/aboutMe">
+              About Me
+            </NavLink>
+          </li>
+          {/* <li>
             <NavLink className={classes['nav-link']} to="/contact">
               Contact
             </NavLink>
-          </li>
+          </li> */}
           {user ? (
             <button
               className={`${classes.btn} ${classes['btn-signout']}`}
@@ -46,7 +47,7 @@ const Header = () => {
             <>
               <li>
                 <NavLink
-                  className={`${classes.btn} ${classes['btn-login']}  ${classes['nav-link']}`}
+                  className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']}
                   to="/login"
                 >
                   Login
@@ -54,7 +55,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  className={`${classes.btn} ${classes['btn-registration']}  ${classes['nav-link']}`}
+                  className={`${classes['btn-registration']}  ${classes['nav-link']}`}
                   to="/registration"
                 >
                   Registration

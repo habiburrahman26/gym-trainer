@@ -39,7 +39,7 @@ const Blogs = () => {
           Firebase provide lots of services other than authentication. Theses
           are Realtime Database, Hosting, Cloud Firestore, Cloud Functions,
           Cloud Storage, Google Analytics, Cloud Messaging, Dynamic Links and
-          Remote Config
+          Remote Config.
         </p>
       </div>
     </section>
