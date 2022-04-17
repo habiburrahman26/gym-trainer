@@ -2,35 +2,35 @@
   {
     "id": "s101",
     "name": "Crossfit Traning",
-    "price": 3000,
+    "price": 300,
     "shortDescription": "Train with the best of the best in an intense workout session under the expert guidance of our personal trainers only at Mutants Gym.",
     "img": "http://www.mutantsgym.com/assets/img/service-14.jpg"
   },
   {
     "id": "s102",
     "name": "Weight Loss",
-    "price": 2500,
+    "price": 250,
     "shortDescription": "Lose extra weight and get in shape with expert personal trainers and top notch fitness only at Mutants Gym, the best gym in Patna.",
     "img": "https://i.ibb.co/t4kL9ZC/young-healthy-man-athlete-doing-exercise-with-ropes-gym-single-male-model-practicing-hard-training-h.jpg"
   },
   {
     "id": "s103",
     "name": "Strength Traning",
-    "price": 4000,
+    "price": 400,
     "shortDescription": "Build your strength and get those extra few pounds in before the swimsuit. Come train under expert personal trainers only at Mutants Gym.",
     "img": "https://i.ibb.co/7tGJNDQ/total-shape-w-XBK9-Jr-M0i-U-unsplash.jpg"
   },
   {
     "id": "s104",
     "name": "Endurance Traning",
-    "price": 2100,
+    "price": 210,
     "shortDescription": "Improve your stamina and workout with your friends while listening to trendy tune at one of the hottest gyms in Patna, Mutants.",
     "img": "https://i.ibb.co/wpTXckx/sven-mieke-Lx-GDv7-VA9-M-unsplash.jpg"
   },
   {
     "id": "s105",
     "name": "Cardio traning",
-    "price": 2000,
+    "price": 200,
     "shortDescription": "Work on your abs and core with state-of-the-art equipments specially brought to you by the best gym in Patna, Mutants.",
     "img": "http://www.mutantsgym.com/assets/img/service-15.jpg"
   }
