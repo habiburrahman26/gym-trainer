@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,6 +7,11 @@ import auth from '../firebase.init';
 
 const Header = () => {
   const [user] = useAuthState(auth);
+  const [toggle, setToggle] = useState(true);
+
+  const changeToggle = () => {
+    setToggle((prevState) => !prevState);
+  };
 
   return (
     <header className={classes.header}>
@@ -14,28 +19,67 @@ const Header = () => {
         <h1 className={classes['heading-primary']}>
           <span className={classes.color}>X-</span>fitt
         </h1>
-        <ul className={classes['nav-items']}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={classes.icon}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+          onClick={changeToggle}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+
+        <ul
+          onClick={changeToggle}
+          className={
+            toggle
+              ? `${classes['nav-items']} ${classes.show}`
+              : `${classes['nav-items']} ${classes.close}`
+          }
+        >
           <li>
-            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${classes['active']} ${classes['nav-link']}`
+                  : classes['nav-link']
+              }
+              to="/"
+            >
               Home
             </NavLink>
           </li>
 
           <li>
-            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/blogs">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${classes['active']} ${classes['nav-link']}`
+                  : classes['nav-link']
+              }
+              to="/blogs"
+            >
               Blogs
             </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']} to="/about">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${classes['active']} ${classes['nav-link']}`
+                  : classes['nav-link']
+              }
+              to="/about"
+            >
               About Me
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink className={classes['nav-link']} to="/contact">
-              Contact
-            </NavLink>
-          </li> */}
           {user ? (
             <button
               className={`${classes.btn} ${classes['btn-signout']}`}
@@ -47,7 +91,11 @@ const Header = () => {
             <>
               <li>
                 <NavLink
-                  className={({isActive})=>isActive ? `${classes['active']} ${classes['nav-link']}` : classes['nav-link']}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${classes['active']} ${classes['nav-link']}`
+                      : classes['nav-link']
+                  }
                   to="/login"
                 >
                   Login
