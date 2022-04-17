@@ -17,7 +17,9 @@ const Registration = () => {
   const [enteredPassword, setEnteredPassword] = useState('');
 
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, {
+      sendEmailVerification: true,
+    });
   const [updateProfile] = useUpdateProfile(auth);
   const [signInWithGithub, gitUser] = useSignInWithGithub(auth);
   const [signInWithGoogle, guser] = useSignInWithGoogle(auth);
@@ -34,8 +36,6 @@ const Registration = () => {
 
   useEffect(() => {
     if (user || gitUser || guser) {
-      console.log(gitUser);
-      console.log(guser);
       navigate('/', { replace: true });
     }
   }, [user, navigate, gitUser, guser]);
@@ -55,9 +55,7 @@ const Registration = () => {
       return;
     }
 
-    await createUserWithEmailAndPassword(enteredEmail, enteredPassword, {
-      sendEmailVerification: true,
-    });
+    await createUserWithEmailAndPassword(enteredEmail, enteredPassword);
     await updateProfile({ displayName: enteredName.trim() });
   };
 
@@ -109,7 +107,10 @@ const Registration = () => {
       <div className="social-meadia-signin">
         <div>
           <button type="button" onClick={() => signInWithGithub()}>
-          <img src="https://img.icons8.com/glyph-neue/64/000000/github.png" alt=''/>
+            <img
+              src="https://img.icons8.com/glyph-neue/64/000000/github.png"
+              alt=""
+            />
             <p>Sign up with github</p>
           </button>
         </div>
