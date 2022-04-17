@@ -102,7 +102,7 @@ const Login = () => {
         <p>New to X-fitt? </p>
         <Link to="/registration">Register</Link>
       </div>
-      <ToastContainer />
+      <ToastContainer className="tostify"/>
     </form>
   );
 };

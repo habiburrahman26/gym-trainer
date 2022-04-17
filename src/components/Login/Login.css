@@ -160,3 +160,10 @@ input.invalid {
   justify-content: center;
   margin-top: 2rem;
 }
+
+
+@media (max-width:36em){
+  .form-control {
+    max-width: 94%;
+  }
+}
