@@ -1,0 +1,107 @@
+.sectin-price {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 6rem 6rem 8rem 4rem;
+  background-color: #000000;
+  color: #fff;
+  margin-bottom: 6rem;
+  border-radius: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+.price-container {
+  margin-top: 3.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+  padding: 0 4rem;
+}
+
+.plan-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.prices {
+  padding: 5rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.price {
+  margin-bottom: 1.6rem;
+}
+
+.dolor {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.amount {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.info {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+.btn {
+  border: none;
+  background-color: #ff5b02;
+  padding: 1rem 2.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #eafe00;
+}
+
+.daily,
+.monthly {
+  background-color: #28282a;
+}
+
+.weekly {
+  background-color: #fcfcfe;
+  color: #000000;
+}
+
+@media (max-width: 36em) {
+  .sectin-price {
+    padding: 6rem 1rem 8rem 1rem;
+  }
+
+  .price-container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .plan-title {
+    font-size: 2rem;
+  }
+}

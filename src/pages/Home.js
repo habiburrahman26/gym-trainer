@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../components/Footer/Footer';
+import { PricePlan } from '../components/PricePlan/PricePlan';
 import Services from '../components/Services/Services';
 import classes from './Home.module.css';
 
@@ -19,7 +20,8 @@ const Home = () => {
         </div>
       </section>
       <Services />
-      <Footer/>
+      <PricePlan />
+      <Footer />
     </>
   );
 };
