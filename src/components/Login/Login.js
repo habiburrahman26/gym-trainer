@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import {
   useSignInWithEmailAndPassword,
@@ -18,6 +18,9 @@ const Login = () => {
   const [signInWithGoogle, guser] = useSignInWithGoogle(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || '/';
 
   const emailChangeHandler = (e) => {
     setEnteredEmail(e.target.value);
@@ -28,9 +31,9 @@ const Login = () => {
 
   useEffect(() => {
     if (user || gitUser || guser) {
-      navigate('/', { replace: true });
+      navigate(from, { replace: true });
     }
-  }, [user, navigate,gitUser,guser]);
+  }, [user, navigate, gitUser, guser, from]);
 
   if (loading) {
     return <LoadingSpinner />;
