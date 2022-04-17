@@ -19,8 +19,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* services section */}
       <Services />
+      {/* Price plan section */}
       <PricePlan />
+      {/* Footer section */}
       <Footer />
     </>
   );

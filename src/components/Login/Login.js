@@ -3,16 +3,20 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import {
   useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail ,
 } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import SocialSignIn from '../SocialSignin/SocialSignIn';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail (auth);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +34,7 @@ const Login = () => {
     if (user) {
       navigate(from, { replace: true });
     }
-  }, [user, navigate,from]);
+  }, [user, navigate, from]);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -44,6 +48,15 @@ const Login = () => {
     }
 
     signInWithEmailAndPassword(enteredEmail, enteredPassword);
+  };
+
+  const resetPassword = async () => {
+    if (enteredEmail.trim() === '') {
+      toast.error('Please enter your email address')
+    } else {
+      await sendPasswordResetEmail(enteredEmail);
+      toast.success("Email send");
+    }
   };
 
   return (
@@ -71,6 +84,9 @@ const Login = () => {
           value={enteredPassword}
         />
       </div>
+      <button type="button" className="forgot-password" onClick={resetPassword}>
+        Forget Password?
+      </button>
       <p className="error-text">{error?.message}</p>
       <div>
         <button className="btn-login">Login</button>
@@ -81,11 +97,12 @@ const Login = () => {
         <div>or</div>
         <div className="line"></div>
       </div>
-      <SocialSignIn name='Login'/>
+      <SocialSignIn name="Login" />
       <div className="toggle-page">
         <p>New to X-fitt? </p>
         <Link to="/registration">Register</Link>
       </div>
+      <ToastContainer />
     </form>
   );
 };

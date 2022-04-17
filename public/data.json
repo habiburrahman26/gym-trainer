@@ -4,7 +4,7 @@
     "name": "Crossfit Traning",
     "price": 300,
     "shortDescription": "Train with the best of the best in an intense workout session under the expert guidance of our personal trainers only at Mutants Gym.",
-    "img": "http://www.mutantsgym.com/assets/img/service-14.jpg"
+    "img": "https://i.ibb.co/0VH75j0/service-14.jpg"
   },
   {
     "id": "s102",
@@ -32,6 +32,6 @@
     "name": "Cardio traning",
     "price": 200,
     "shortDescription": "Work on your abs and core with state-of-the-art equipments specially brought to you by the best gym in Patna, Mutants.",
-    "img": "http://www.mutantsgym.com/assets/img/service-15.jpg"
+    "img": "https://i.ibb.co/NSqb18d/service-15.jpg"
   }
 ]
