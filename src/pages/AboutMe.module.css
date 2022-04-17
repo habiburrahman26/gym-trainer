@@ -1,0 +1,66 @@
+.section-about {
+  background-color: #f9f9ff;
+  max-width: 110rem;
+  margin: 8rem auto;
+  padding: 4rem 4rem;
+  margin-bottom: 9.6rem;
+}
+
+.about {
+  padding: 0 9.6rem 0 9.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  color: #343a40;
+}
+
+.about-image-box {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+}
+
+.about-img {
+  height: 32rem;
+}
+
+.about-text-box {
+  width: 50%;
+}
+
+.about-name {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+
+.about-text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  letter-spacing: 0.4px;
+  text-align: justify;
+}
+
+@media (max-width: 50em) {
+  .section-about {
+    background-color: #f9f9ff;
+    max-width: 110rem;
+    padding: 4rem 0;
+  }
+
+  .about {
+    padding: 0 1.5rem;
+    flex-direction: column;
+  }
+
+  .about-image-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-text-box {
+    width: 100%;
+    text-align: center;
+  }
+}
