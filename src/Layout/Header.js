@@ -1,8 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import auth from '../firebase.init';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <header className={classes.header}>
       <nav className={classes['nav-lists']}>
@@ -30,22 +35,33 @@ const Header = () => {
               Contact
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={`${classes.btn} ${classes['btn-login']}  ${classes['nav-link']}`}
-              to="/login"
+          {user ? (
+            <button
+              className={`${classes.btn} ${classes['btn-signout']}`}
+              onClick={() => signOut(auth)}
             >
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={`${classes.btn} ${classes['btn-registration']}  ${classes['nav-link']}`}
-              to="/registration"
-            >
-              Registration
-            </NavLink>
-          </li>
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <li>
+                <NavLink
+                  className={`${classes.btn} ${classes['btn-login']}  ${classes['nav-link']}`}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={`${classes.btn} ${classes['btn-registration']}  ${classes['nav-link']}`}
+                  to="/registration"
+                >
+                  Registration
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

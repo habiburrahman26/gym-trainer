@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
+  useSignInWithGithub,
+  useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../UI/LoadingSpinner';
-import { async } from '@firebase/util';
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile] = useUpdateProfile(auth);
+  const [signInWithGithub, gitUser] = useSignInWithGithub(auth);
+  const [signInWithGoogle, guser] = useSignInWithGoogle(auth);
 
   const nameChangeHandler = (e) => {
     setEnteredName(e.target.value);
@@ -30,11 +33,12 @@ const Registration = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user || gitUser || guser) {
+      console.log(gitUser);
+      console.log(guser);
       navigate('/', { replace: true });
-      console.log(user);
     }
-  }, [user, navigate]);
+  }, [user, navigate, gitUser, guser]);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -104,16 +108,13 @@ const Registration = () => {
       </div>
       <div className="social-meadia-signin">
         <div>
-          <button type="button">
-            <img
-              src="https://img.icons8.com/color/48/000000/facebook-new.png"
-              alt=""
-            />
-            <p>Sign up with facebook</p>
+          <button type="button" onClick={() => signInWithGithub()}>
+          <img src="https://img.icons8.com/glyph-neue/64/000000/github.png" alt=''/>
+            <p>Sign up with github</p>
           </button>
         </div>
         <div>
-          <button type="button">
+          <button type="button" onClick={() => signInWithGoogle()}>
             <img
               src="https://img.icons8.com/color/48/000000/google-logo.png"
               alt=""
