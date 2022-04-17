@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import LoadingSpinner from '../UI/LoadingSpinner';
 
@@ -10,6 +14,8 @@ const Login = () => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [signInWithGithub, gitUser] = useSignInWithGithub(auth);
+  const [signInWithGoogle, guser] = useSignInWithGoogle(auth);
 
   const navigate = useNavigate();
 
@@ -21,10 +27,10 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user || gitUser || guser) {
       navigate('/', { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate,gitUser,guser]);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -65,6 +71,7 @@ const Login = () => {
           value={enteredPassword}
         />
       </div>
+      <p className="error-text">{error?.message}</p>
       <div>
         <button className="btn-login">Login</button>
       </div>
@@ -76,21 +83,21 @@ const Login = () => {
       </div>
       <div className="social-meadia-signin">
         <div>
-          <button type="button">
+          <button type="button" onClick={() => signInWithGithub()}>
             <img
-              src="https://img.icons8.com/color/48/000000/facebook-new.png"
+              src="https://img.icons8.com/glyph-neue/64/000000/github.png"
               alt=""
             />
-            <p>Login in with facebook</p>
+            <p>Login with github</p>
           </button>
         </div>
         <div>
-          <button type="button">
+          <button type="button" onClick={() => signInWithGoogle()}>
             <img
               src="https://img.icons8.com/color/48/000000/google-logo.png"
               alt=""
             />
-            <p>Login in with google</p>
+            <p>Login with google</p>
           </button>
         </div>
       </div>
