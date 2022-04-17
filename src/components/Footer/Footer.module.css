@@ -1,0 +1,35 @@
+.footer {
+  background-color: #132438;
+}
+
+.footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 125rem;
+  padding: 0 4rem;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  height: 15rem;
+  color: #fff;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  width: 2.8rem;
+  cursor: pointer;
+  filter: brightness(.9);
+}
+
+@media (max-width: 47.5em) {
+  .footer > div {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
