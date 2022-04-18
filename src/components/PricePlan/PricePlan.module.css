@@ -87,9 +87,19 @@
   color: #000000;
 }
 
+@media (max-width: 60em) {
+  .sectin-price {
+    padding: 6rem 0 8rem 0;
+  }
+
+  .price-container {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
 @media (max-width: 36em) {
   .sectin-price {
-    padding: 6rem 1rem 8rem 1rem;
+    padding: 6rem 0 8rem 0;
   }
 
   .price-container {

@@ -7,7 +7,7 @@ import auth from '../firebase.init';
 
 const Header = () => {
   const [user] = useAuthState(auth);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const changeToggle = () => {
     setToggle((prevState) => !prevState);

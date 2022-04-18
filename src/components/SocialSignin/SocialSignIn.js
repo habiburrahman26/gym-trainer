@@ -5,10 +5,11 @@ import {
 } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import LoadingSpinner from '../UI/LoadingSpinner'
 
 const SocialSignIn = ({ name}) => {
-  const [signInWithGithub, gitUser] = useSignInWithGithub(auth);
-  const [signInWithGoogle, guser] = useSignInWithGoogle(auth);
+  const [signInWithGithub, gitUser,gitLoading] = useSignInWithGithub(auth);
+  const [signInWithGoogle, guser,googleLoading] = useSignInWithGoogle(auth);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,6 +21,10 @@ const SocialSignIn = ({ name}) => {
       navigate(from, { replace: true });
     }
   }, [navigate, gitUser, guser, from]);
+
+  if(gitLoading || googleLoading){
+    return <LoadingSpinner/>
+  }
 
   return (
     <div className="social-meadia-signin">

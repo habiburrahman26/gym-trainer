@@ -82,7 +82,7 @@
 
 @media (max-width: 36em) {
   .header {
-    padding: 2rem 1rem;
+    padding: 2rem 1.6rem;
   }
 
   .nav-items.show {

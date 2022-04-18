@@ -85,7 +85,7 @@
 
 @media (max-width: 70em) {
   .servies-section {
-    padding: 8rem 1rem;
+    padding: 8rem 1.6rem;
   }
 
   .servies {
@@ -95,7 +95,7 @@
 
 @media (max-width: 36em) {
   .servies-section {
-    padding: 8rem 1rem;
+    padding: 8rem 1.4rem;
   }
 
   .servies {

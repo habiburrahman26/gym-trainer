@@ -5,11 +5,11 @@
 }
 
 .container {
-  background-size: cover;
-  filter: brightness(0.8);
   width: 100%;
   height: 90vh;
   background-image: url('https://i.ibb.co/K79K2wZ/banner2.jpg');
+  filter: brightness(0.8);
+  background-size: cover; 
 }
 
 .content {
@@ -43,6 +43,13 @@
 }
 
 @media (max-width: 36em) {
+  .container {
+    background-image: url('https://i.ibb.co/YNFr4yP/valery-sysoev-LDAir-ERNzew-unsplash.jpg');
+    filter: brightness(0.7);
+    background-position: center;
+
+  }
+
   .heading {
     font-size: 2.6rem;
     padding-left: 0;
