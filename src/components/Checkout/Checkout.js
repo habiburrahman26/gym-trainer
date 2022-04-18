@@ -7,7 +7,7 @@ const Checkout = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    <p style={{fontSize:'26px'}}>{toast.success('Booked Successfully')}</p>
+    <p style={{fontSize:'26px'}}>{toast.success('Thank you for the booking')}</p>
   };
   return (
     <form className="form-control" onSubmit={submitHandler}>

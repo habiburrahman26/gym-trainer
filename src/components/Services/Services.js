@@ -18,6 +18,7 @@ const Services = () => {
         {services.map((s) => (
           <ServicesItem
             key={s.id}
+            id={s.id}
             name={s.name}
             img={s.img}
             price={s.price}

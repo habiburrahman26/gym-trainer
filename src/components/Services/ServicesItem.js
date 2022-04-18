@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Services.module.css';
 
-const ServicesItem = ({ name, price, img, shortDescription }) => {
+const ServicesItem = ({id, name, price, img, shortDescription }) => {
   return (
     <div className={classes.service}>
       <img src={img} alt="" className={classes.img} />
@@ -12,7 +12,7 @@ const ServicesItem = ({ name, price, img, shortDescription }) => {
       </div>
       <p className={classes.desc}>{shortDescription}</p>
       <div>
-        <Link to='/checkout' className={classes.bookLink}>Book Now</Link>
+        <Link to={`/checkout/${id}`} className={classes.bookLink}>Book Now</Link>
       </div>
     </div>
   );
