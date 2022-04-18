@@ -6,7 +6,7 @@ export const PricePlan = () => {
   return (
     <section className={classes['sectin-price']}>
       <div>
-        <h2 className={classes.title}>OUR PRICING PLANS</h2>
+        <h2 className={classes.title}>MY PRICING PLANS</h2>
         <div className={classes['price-container']}>
           <PriceCart className='daily' name="Daily" price="12" />
           <PriceCart className='weekly' name="Weekly" price="75" />

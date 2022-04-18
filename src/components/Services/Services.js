@@ -13,7 +13,7 @@ const Services = () => {
 
   return (
     <section className={classes['servies-section']}>
-      <h2 className={classes.title}>Our Services</h2>
+      <h2 className={classes.title}>My Services</h2>
       <div className={classes.servies}>
         {services.map((s) => (
           <ServicesItem
